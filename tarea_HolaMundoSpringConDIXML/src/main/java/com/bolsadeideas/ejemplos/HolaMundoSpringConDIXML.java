@@ -18,5 +18,5 @@ public class HolaMundoSpringConDIXML {
 		return factory;
 	}
 	
-	//Linea para GIT
+	//Linea para G
 }
