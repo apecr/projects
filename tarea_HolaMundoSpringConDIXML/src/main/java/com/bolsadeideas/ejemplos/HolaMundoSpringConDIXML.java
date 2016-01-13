@@ -17,4 +17,6 @@ public class HolaMundoSpringConDIXML {
 		BeanFactory factory = new ClassPathXmlApplicationContext("/beans.xml");
 		return factory;
 	}
+	
+	//Linea para GIT
 }
