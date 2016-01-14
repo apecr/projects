@@ -18,5 +18,4 @@ public class HolaMundoSpringConDIXML {
 		return factory;
 	}
 	
-	//Linea para G
 }
