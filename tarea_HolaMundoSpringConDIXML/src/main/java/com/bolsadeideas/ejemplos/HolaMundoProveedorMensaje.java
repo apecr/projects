@@ -8,10 +8,12 @@ public class HolaMundoProveedorMensaje implements ProveedorMensaje {
 		return this.proveedorSaludo.getSaludo();
 	}
 
+	@Override
 	public ProveedorSaludo getProveedorSaludo() {
 		return proveedorSaludo;
 	}
 
+	@Override
 	public void setProveedorSaludo(ProveedorSaludo proveedorSaludo) {
 		this.proveedorSaludo = proveedorSaludo;
 	}
