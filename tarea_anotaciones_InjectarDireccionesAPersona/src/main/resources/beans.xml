@@ -10,6 +10,15 @@
 
 	<context:component-scan base-package="com.bolsadeideas.ejemplos" />
 
+	<bean id="listaDirecciones" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="primeraDireccion" />
+				<ref bean="segundaDireccion" />
+			</list>
+		</constructor-arg>
+	</bean>
+
 	<bean id="primeraDireccion" class="com.bolsadeideas.ejemplos.Direccion"
 		p:calle="Malcampo" p:ciudad="Madrid" p:numero="13" p:pais="España" />
 	<bean id="segundaDireccion" class="com.bolsadeideas.ejemplos.Direccion"

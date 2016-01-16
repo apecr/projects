@@ -1,8 +1,5 @@
 package com.bolsadeideas.ejemplos;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Direccion {
 	
 	private int numero = 111;
