@@ -13,7 +13,7 @@ public class Main {
 	}
 
 	public static String getInfoPersona(Persona persona) {
-		StringBuffer direcciones = new StringBuffer();
+		StringBuilder direcciones = new StringBuilder();
 		if (persona.getDirecciones() != null) {
 			for (Direccion direccion : persona.getDirecciones().getListaDirecciones()) {
 				direcciones.append(" Direccion: ").append(direccion.getNumero()).append(" ").append(direccion.getCalle())
