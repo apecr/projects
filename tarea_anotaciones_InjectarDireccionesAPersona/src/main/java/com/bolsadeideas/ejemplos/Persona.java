@@ -1,11 +1,24 @@
 package com.bolsadeideas.ejemplos;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Persona {
 	private String nombre = "Andres Guzman";
 	private int edad = 34;
 	private float peso = 1.99f;
 	private boolean programador = true;
-	private Direccion direccion;
+	@Autowired
+	private IDirecciones direcciones;
+	
+	public IDirecciones getDirecciones() {
+		return direcciones;
+	}
+
+	public void setDirecciones(IDirecciones direcciones) {
+		this.direcciones = direcciones;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -39,12 +52,5 @@ public class Persona {
 		this.programador = esProgramador;
 	}
 
-	public Direccion getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(Direccion direccion) {
-		this.direccion = direccion;
-	}
 
 }

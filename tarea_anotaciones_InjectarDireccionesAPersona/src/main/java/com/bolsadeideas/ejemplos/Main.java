@@ -13,12 +13,17 @@ public class Main {
 	}
 
 	public static String getInfoPersona(Persona persona) {
-		return "Nombre:" + persona.getNombre() + "\n" + "Edad:"
-				+ persona.getEdad() + "\n" + "Peso: " + persona.getPeso()
-				+ "\n" + "Es Programador?: " + persona.isProgramador() + "\n"
-				+ "Direccion: " + persona.getDireccion().getNumero() + " "
-				+ persona.getDireccion().getCalle() + " "
-				+ persona.getDireccion().getCiudad() + " "
-				+ persona.getDireccion().getPais();
+		StringBuffer direcciones = new StringBuffer();
+		if (persona.getDirecciones() != null) {
+			for (Direccion direccion : persona.getDirecciones().getListaDirecciones()) {
+				direcciones.append(" Direccion: ").append(direccion.getNumero()).append(" ").append(direccion.getCalle())
+						.append(" ").append(direccion.getCiudad()).append(" ").append(direccion.getPais()).append("\n");
+
+			}
+		}
+		return "Nombre:" + persona.getNombre() + "\n" + "Edad:" + persona.getEdad() + "\n" + "Peso: "
+				+ persona.getPeso() + "\n" + "Es Programador?: " + persona.isProgramador() + "\n"
+				+ "Direcciones:\n"
+				+ direcciones.toString();
 	}
 }

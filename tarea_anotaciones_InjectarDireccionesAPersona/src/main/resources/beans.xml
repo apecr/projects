@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans	
-		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- declaramos bean "persona" e inyectamos el bean direccion -->
-	<bean id="persona" class="com.bolsadeideas.ejemplos.Persona"
-		p:direccion-ref="direccion" />
+	<context:component-scan base-package="com.bolsadeideas.ejemplos" />
 
-	<!-- bean direccion -->
-	<bean id="direccion" class="com.bolsadeideas.ejemplos.Direccion" />
+	<bean id="primeraDireccion" class="com.bolsadeideas.ejemplos.Direccion"
+		p:calle="Malcampo" p:ciudad="Madrid" p:numero="13" p:pais="España" />
+	<bean id="segundaDireccion" class="com.bolsadeideas.ejemplos.Direccion"
+		p:calle="Rosalía de Castro" p:ciudad="Pontevedra" p:numero="26"
+		p:pais="España" />
+
 
 </beans>
