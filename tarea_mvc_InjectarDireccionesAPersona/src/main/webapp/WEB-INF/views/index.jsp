@@ -16,12 +16,10 @@
 			<div class="panel-heading">tarea_mvc_InjectarDireccionesAPersona</div>
 			<div class="panel-body">
 				<ul class="nav nav-pills nav-stacked">
-				
-					<li><a href="holamundo">/holamundo</a></li>
-					<li><a href="holamundo/hola-spring">/holamundo/hola-spring</a></li>
-					<li><a href="holamundo/hola-springmvc">/holamundo/hola-springmvc</a></li>
-					<li><a href="holamundo/hola-springcore">/holamundo/hola-springcore</a></li>
-					<li><a href="holamundo/hola-springbatch">/holamundo/hola-springbatch</a></li>
+
+					<li><a href="inicio">/inicio</a></li>
+					<li><a href="persona">/persona</a></li>
+					<li><a href="direcciones">/direcciones</a></li>
 				</ul>
 			</div>
 		</div>
