@@ -28,13 +28,18 @@ import es.alberto.cursospring.vo.Usuario;
 @RequestMapping("/usuario")
 public class RegistroUsuarioController {
 
+	public static final String USER_DETAIL = "userDetail";
+
+	public static final String REDIRECT_USUARIO = "redirect:/usuario/";
+
+	public static final String CREATE_USER = "createUser";
+
 	private static final Logger LOG = LoggerFactory.getLogger(RegistroUsuarioController.class);
 
 	private Map<Long, Usuario> mapaUsuarios = new HashMap<Long, Usuario>();
 	
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
-
 		binder.registerCustomEditor(String.class, "nombre", new NombreMayusculaEditor());
 		binder.registerCustomEditor(String.class, "apellido", new NombreMayusculaEditor());
 	}
@@ -48,16 +53,16 @@ public class RegistroUsuarioController {
 		model.addAttribute("userModel", user);
 
 		// retornamos la vista form
-		return "createUser";
+		return CREATE_USER;
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String guardar(@Valid @ModelAttribute("userModel") Usuario user, BindingResult result) {
 		if (result.hasErrors()) {
-			return "createUser";
+			return CREATE_USER;
 		}
 		this.mapaUsuarios.put(user.asignarId(), user);
-		return "redirect:/usuario/" + user.getId();
+		return REDIRECT_USUARIO + user.getId();
 	}
 
 	@RequestMapping(value = "{id}", method = RequestMethod.GET)
@@ -69,7 +74,7 @@ public class RegistroUsuarioController {
 		model.addAttribute("userModel", user);
 		// return "cuenta/detalle"; // Muestra el detalle de la cuenta en
 		// formato formulario
-		return "userDetail"; // Muestra el detalle de la cuenta en formato
+		return USER_DETAIL; // Muestra el detalle de la cuenta en formato
 									// tabla html
 	}
 
