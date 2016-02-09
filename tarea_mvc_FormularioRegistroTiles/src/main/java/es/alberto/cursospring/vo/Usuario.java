@@ -13,20 +13,20 @@ public class Usuario {
 	
 	private Long id;
 	
-	@NotEmpty(message = "El nombre no puede ser vacio")
+	@NotEmpty(message = "{error.nombre}")
 	private String nombre;
 	
-	@NotEmpty(message = "El apellido no puede ser vacio")
+	@NotEmpty(message = "{error.apellido}")
 	private String apellido;
 	
-	@NotEmpty(message = "Debe introducir un email valido")
-	@Email(message = "Debe introducir un email valido")
+	@NotEmpty(message = "{error.email}")
+	@Email(message = "{error.email}")
 	private String email;
 	
-	@NotEmpty(message = "Username no puede ser vacio")
+	@NotEmpty(message = "{error.username}")
 	private String userName;
 	
-	@Size( min = 4, max = 8, message = "El tamaño de la clave tiene que estar entre 4 y 8")
+	@Size( min = 4, max = 8, message = "{error.clave}")
 	private String clave;
 	
 	public Long asignarId() {
