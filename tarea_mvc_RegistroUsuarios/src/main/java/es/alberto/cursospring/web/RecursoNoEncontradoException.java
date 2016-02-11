@@ -1,4 +1,4 @@
-package es.alberto.cursospring;
+package es.alberto.cursospring.web;
 
 import java.util.Date;
 

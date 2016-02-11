@@ -1,12 +1,10 @@
-package es.alberto.cursospring;
-
-import java.util.HashMap;
-import java.util.Map;
+package es.alberto.cursospring.web;
 
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -19,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import es.alberto.cursospring.binder.NombreMayusculaEditor;
+import es.alberto.cursospring.models.service.IUsuarioService;
 import es.alberto.cursospring.vo.Usuario;
 
 /**
@@ -27,6 +26,9 @@ import es.alberto.cursospring.vo.Usuario;
 @Controller
 @RequestMapping("/usuario")
 public class RegistroUsuarioController {
+	
+	@Autowired
+	private IUsuarioService usuarioService;
 
 	public static final String USER_DETAIL = "userDetail";
 
@@ -36,8 +38,6 @@ public class RegistroUsuarioController {
 
 	private static final Logger LOG = LoggerFactory.getLogger(RegistroUsuarioController.class);
 
-	private Map<Long, Usuario> mapaUsuarios = new HashMap<Long, Usuario>();
-	
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
 		binder.registerCustomEditor(String.class, "nombre", new NombreMayusculaEditor());
@@ -61,13 +61,13 @@ public class RegistroUsuarioController {
 		if (result.hasErrors()) {
 			return CREATE_USER;
 		}
-		this.mapaUsuarios.put(user.asignarId(), user);
+		this.usuarioService.save(user);
 		return REDIRECT_USUARIO + user.getId();
 	}
 
 	@RequestMapping(value = "{id}", method = RequestMethod.GET)
 	public String verDetalle(@PathVariable Long id, Model model) {
-		Usuario user = this.mapaUsuarios.get(id);
+		Usuario user = this.usuarioService.findById(id);
 		if (user == null) {
 			throw new RecursoNoEncontradoException(id);
 		}

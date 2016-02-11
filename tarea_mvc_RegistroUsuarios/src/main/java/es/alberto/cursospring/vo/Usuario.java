@@ -1,16 +1,23 @@
 package es.alberto.cursospring.vo;
 
-import java.util.concurrent.atomic.AtomicLong;
+import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class Usuario {
+@Entity
+public class Usuario implements Serializable{
 	
-	private static final AtomicLong ID_SEQUENCIA = new AtomicLong();
-	
+	private static final long serialVersionUID = 1L;	
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotEmpty(message = "{error.nombre}")
@@ -29,11 +36,6 @@ public class Usuario {
 	@Size( min = 4, max = 8, message = "{error.clave}")
 	private String clave;
 	
-	public Long asignarId() {
-		this.id = ID_SEQUENCIA.incrementAndGet();
-		return id;
-	}
-
 	public String getNombre() {
 		return nombre;
 	}
