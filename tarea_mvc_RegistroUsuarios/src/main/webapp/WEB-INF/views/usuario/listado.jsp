@@ -11,7 +11,7 @@
 
 <p>
 	<a class="btn btn-default" href="<c:url value="/usuario"/>"
-		role="button">Agregar Usuario (+)</a>
+		role="button"><fmt:message key="text.agregar.usuario" /> (+)</a>
 </p>
 <div class="panel panel-primary">
 	<div class="panel-heading">

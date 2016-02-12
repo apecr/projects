@@ -52,5 +52,13 @@ public class UsuarioDaoTest {
 		Usuario userNull = usuarioDao.findById(userBBDD.getId());
 		Assert.assertNull(userNull);
 	}
+	
+	@Test
+	@Transactional
+	public void createUser(){
+		usuarioDao.save(user);
+		List<Usuario> listaUsuarios = usuarioDao.findAll();
+		Assert.assertEquals(1, listaUsuarios.size());
+	}
 
 }

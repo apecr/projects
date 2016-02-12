@@ -6,13 +6,14 @@ import org.junit.Test;
 
 public class NombreMayusculaEditorTest {
 
+	private static final String HOLA = "Hola";
 	private NombreMayusculaEditor binder = new NombreMayusculaEditor();
 	
 	@Test
 	public void testChange(){
 		String text = "hola";
 		binder.setAsText(text);
-		Assert.assertEquals("HOLA", binder.getValue().toString());
+		Assert.assertEquals(HOLA, binder.getValue().toString());
 	}
 	
 	@Test
