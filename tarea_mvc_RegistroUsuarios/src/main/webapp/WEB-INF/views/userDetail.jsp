@@ -4,11 +4,19 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <div class="page-header">
-	<h1><fmt:message key="text.spring.form.small" /></h1>
+	<h1>
+		<fmt:message key="text.spring.form.small" />
+	</h1>
 </div>
-
+<p>
+	<a class="btn btn-default"
+		href="<%=request.getContextPath()%>/usuario/listado.htm" role="button"><fmt:message
+			key="button.volver" /></a>
+</p>
 <div class="panel panel-primary">
-	<div class="panel-heading"><fmt:message key="text.detalle.usuario" /></div>
+	<div class="panel-heading">
+		<fmt:message key="text.detalle.usuario" />
+	</div>
 	<div class="panel-body">
 		<div class="container">
 			<div class="row">
@@ -37,9 +45,6 @@
 							<td>${user.clave}</td>
 					</tbody>
 				</table>
-				<a class="btn btn-default"
-					href="<%=request.getContextPath()%>/usuario/listado.htm" role="button"><fmt:message key="button.volver" /></a>
-
 			</div>
 		</div>
 	</div>

@@ -9,9 +9,15 @@
 		<small> <fmt:message key="header.detalle" /></small>
 	</h1>
 </div>
-
+<p>
+	<a class="btn btn-default"
+		href="<%=request.getContextPath()%>/usuario/listado.htm" role="button"><fmt:message
+			key="button.volver" /></a>
+</p>
 <div class="panel panel-primary">
-	<div class="panel-heading"><fmt:message key="text.crear.estudiante" /></div>
+	<div class="panel-heading">
+		<fmt:message key="text.crear.estudiante" />
+	</div>
 	<div class="panel-body">
 		<div class="container">
 			<div class="row">
@@ -87,8 +93,6 @@
 						</div>
 					</div>
 				</form:form>
-				<a class="btn btn-default"
-                    href="<%=request.getContextPath()%>/usuario/listado.htm" role="button"><fmt:message key="button.volver" /></a>
 			</div>
 		</div>
 	</div>

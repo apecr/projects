@@ -28,7 +28,7 @@ public class UsuarioDao implements IUsuarioDao {
 
 	@Override
 	public void save(Usuario usuario) {
-		hibernateTemplate.save(usuario);
+		hibernateTemplate.saveOrUpdate(usuario);
 
 	}
 

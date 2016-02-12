@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,6 +43,8 @@ public class RegistroUsuarioController {
 	public static final String CREATE_USER = "createUser";
 	public static final String LISTADO_USERS = "/usuario/listado.htm";
 
+	private static final Logger LOG = LoggerFactory.getLogger(RegistroUsuarioController.class);
+
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
 		binder.registerCustomEditor(String.class, "nombre", new NombreMayusculaEditor());
@@ -65,6 +69,7 @@ public class RegistroUsuarioController {
 		if (result.hasErrors()) {
 			return CREATE_USER;
 		}
+		LOG.info("Identificador de Usuario recibido: " + user.getId());
 		this.usuarioService.save(user);
 		status.setComplete();
 		return REDIRECT_USUARIO + user.getId();
