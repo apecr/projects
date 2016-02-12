@@ -16,7 +16,7 @@
 		<div class="container">
 			<div class="row">
 
-				<form:form modelAttribute="userModel" action="usuario" method="post"
+				<form:form modelAttribute="user" method="post"
 					cssClass="form-horizontal" role="form">
 					<form:errors path="*" cssClass="alert alert-danger"
 						cssStyle="width: 800px;" element="div" />
@@ -87,6 +87,8 @@
 						</div>
 					</div>
 				</form:form>
+				<a class="btn btn-default"
+                    href="<%=request.getContextPath()%>/usuario/listado.htm" role="button"><fmt:message key="button.volver" /></a>
 			</div>
 		</div>
 	</div>

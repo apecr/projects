@@ -25,4 +25,9 @@
 		<put-attribute name="title" value="Creación de usuario" />
 		<put-attribute name="body" value="/WEB-INF/views/createUser.jsp" />
 	</definition>
+	
+	<definition name="usuario/listado" extends="definicion.principal">
+        <put-attribute name="title" value="Listado de usuarios" />
+        <put-attribute name="body" value="/WEB-INF/views/usuario/listado.jsp" />
+    </definition>
 </tiles-definitions>

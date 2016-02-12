@@ -2,6 +2,8 @@ package es.alberto.cursospring.binder;
 
 import java.beans.PropertyEditorSupport;
 
+import org.apache.commons.lang3.text.WordUtils;
+
 public class NombreMayusculaEditor extends PropertyEditorSupport {
 
 	@Override
@@ -10,8 +12,7 @@ public class NombreMayusculaEditor extends PropertyEditorSupport {
 			setValue(null);
 		}
 		else {
-			String value = text.toUpperCase();
-			setValue(value);
+			setValue(WordUtils.capitalizeFully(text));
 		}
 	}
 }

@@ -18,27 +18,27 @@
 					<tbody>
 						<tr>
 							<td><fmt:message key="label.nombre" />:</td>
-							<td>${userModel.nombre}</td>
+							<td>${user.nombre}</td>
 						</tr>
 						<tr>
 							<td><fmt:message key="label.apellido" />:</td>
-							<td>${userModel.apellido}</td>
+							<td>${user.apellido}</td>
 						</tr>
 						<tr>
 							<td><fmt:message key="label.email" />:</td>
-							<td>${userModel.email}</td>
+							<td>${user.email}</td>
 						</tr>
 						<tr>
 							<td><fmt:message key="label.username" />:</td>
-							<td>${userModel.userName}</td>
+							<td>${user.userName}</td>
 						</tr>
 						<tr>
 							<td><fmt:message key="label.clave" />:</td>
-							<td>${userModel.clave}</td>
+							<td>${user.clave}</td>
 					</tbody>
 				</table>
 				<a class="btn btn-default"
-					href="<%=request.getContextPath()%>/usuario" role="button"><fmt:message key="button.volver" /></a>
+					href="<%=request.getContextPath()%>/usuario/listado.htm" role="button"><fmt:message key="button.volver" /></a>
 
 			</div>
 		</div>
