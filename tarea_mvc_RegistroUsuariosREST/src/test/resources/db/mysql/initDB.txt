@@ -1,0 +1,10 @@
+/* Create tables */
+DROP TABLE IF EXISTS USUARIOS;
+CREATE TABLE IF NOT EXISTS USUARIOS (
+    ID                  INTEGER      NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    NOMBRE              VARCHAR(200) NOT NULL,
+    APELLIDO            VARCHAR(200) NOT NULL,
+    EMAIL               VARCHAR(200) NOT NULL,
+    USERNAME            VARCHAR(200) NOT NULL,
+    CLAVE               VARCHAR(8)   NOT NULL
+) engine=InnoDB;
