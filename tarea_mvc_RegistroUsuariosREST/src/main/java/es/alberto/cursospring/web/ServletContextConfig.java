@@ -60,7 +60,6 @@ public class ServletContextConfig extends WebMvcConfigurerAdapter {
 		UrlBasedViewResolver viewResolver = new UrlBasedViewResolver();
 		viewResolver.setOrder(1);
 		viewResolver.setViewClass(TilesView.class);
-//		viewResolver.setOrder(beanNameViewResolver().getOrder() + 1);
 		return viewResolver;
 	}
 

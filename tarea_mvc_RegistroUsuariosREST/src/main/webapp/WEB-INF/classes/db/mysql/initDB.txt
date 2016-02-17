@@ -1,8 +1,0 @@
-/* Create tables */
-DROP TABLE IF EXISTS PRODUCTOS;
-CREATE TABLE IF NOT EXISTS PRODUCTOS (
-    ID                  INTEGER     NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    NOMBRE              VARCHAR(200) NOT NULL,
-    PRECIO              INTEGER        NOT NULL,
-    CANTIDAD            INTEGER     NOT NULL
-) engine=InnoDB;
