@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+ 	<!-- La definición principal del layout o root -->
+	<definition name="definicion.principal" template="/WEB-INF/tiles/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
+	</definition>
+
+    <!-- Esta es una definición Tiles hija que extiende de la principal/padre "definicion.principal" 
+         sobreescribe los componentes "title" y "body" -->
+	<definition name="userDetail" extends="definicion.principal">
+		<put-attribute name="title" value="Detallede usuario" />
+		<put-attribute name="body" value="/WEB-INF/views/userDetail.jsp" />
+	</definition>
+
+    <!-- Esta es otra definición hija que extiende de la principal "definicion.principal" 
+         sobreescribe los componentes "title" y "body" -->
+	<definition name="createUser" extends="definicion.principal">
+		<put-attribute name="title" value="Creación de usuario" />
+		<put-attribute name="body" value="/WEB-INF/views/createUser.jsp" />
+	</definition>
+	
+	<definition name="usuario/listado" extends="definicion.principal">
+        <put-attribute name="title" value="Listado de usuarios" />
+        <put-attribute name="body" value="/WEB-INF/views/usuario/listado.jsp" />
+    </definition>
+</tiles-definitions>
