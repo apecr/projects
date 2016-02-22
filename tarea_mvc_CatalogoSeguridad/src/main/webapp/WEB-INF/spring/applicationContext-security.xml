@@ -13,7 +13,6 @@
 		<access-denied-handler error-page="/mi_pagina_error_403" />
 		<intercept-url pattern="/catalogo/form*" access="hasRole('ROLE_SUPERVISOR')" />
 		<intercept-url pattern="/catalogo/eliminar*" access="hasRole('ROLE_SUPERVISOR')" />
-		<intercept-url pattern="/catalogo*" access="hasRole('ROLE_USER')" />
 		<form-login login-page="/mi_pagina_login"
 			default-target-url="/?success=1" authentication-failure-url="/mi_pagina_login?error" />
 		<logout logout-success-url="/mi_pagina_login?logout" />

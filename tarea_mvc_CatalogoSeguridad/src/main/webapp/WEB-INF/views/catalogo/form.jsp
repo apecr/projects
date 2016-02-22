@@ -12,8 +12,10 @@
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
+	<jsp:include page="../menu.jsp" />
 	<div class="page-header">
 		<h1>
 			${titulo}: <small>Ejemplo de base datos Spring MVC usando
@@ -83,8 +85,17 @@
 				</div>
 			</div>
 		</div>
-
+		<form id="logoutForm"
+			action="${pageContext.request.contextPath}/logout" method="post">
+			<input class="btn btn-warning" role="button" type="submit"
+				value="Log out" /> <input type="hidden"
+				name="${_csrf.parameterName}" value="${_csrf.token}" />
+		</form>
 	</div>
-
+	<script type="text/javascript">
+		function formSubmit() {
+			$("#logoutForm").submit();
+		}
+	</script>
 </body>
 </html>

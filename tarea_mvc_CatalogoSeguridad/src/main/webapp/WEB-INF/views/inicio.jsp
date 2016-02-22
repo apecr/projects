@@ -59,11 +59,8 @@
 					</div>
 				</sec:authorize>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="holamundo">/holamundo</a></li>
-					<li><a href="holamundo/hola-spring">/holamundo/hola-spring</a></li>
-					<li><a href="holamundo/hola-springmvc">/holamundo/hola-springmvc</a></li>
-					<li><a href="holamundo/hola-springcore">/holamundo/hola-springcore</a></li>
-					<li><a href="holamundo/hola-springbatch">/holamundo/hola-springbatch</a></li>
+					<li><a href=catalogo/listado.htm>/catalogo/listado.htm</a></li>
+					<li><a href="catalogo/form.htm">/catalogo/form.htm</a></li>
 				</ul>
 			</div>
 		</div>
