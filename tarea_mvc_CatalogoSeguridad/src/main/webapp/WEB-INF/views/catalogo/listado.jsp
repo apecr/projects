@@ -80,12 +80,14 @@
 				</div>
 			</div>
 		</div>
-		<form id="logoutForm"
-			action="${pageContext.request.contextPath}/logout" method="post">
-			<input class="btn btn-warning" role="button" type="submit"
-				value="Log out" /> <input type="hidden"
-				name="${_csrf.parameterName}" value="${_csrf.token}" />
-		</form>
+		<sec:authorize access="isAuthenticated()">
+			<form id="logoutForm"
+				action="${pageContext.request.contextPath}/logout" method="post">
+				<input class="btn btn-warning" role="button" type="submit"
+					value="Log out" /> <input type="hidden"
+					name="${_csrf.parameterName}" value="${_csrf.token}" />
+			</form>
+		</sec:authorize>
 	</div>
 	<script type="text/javascript">
 		function formSubmit() {
